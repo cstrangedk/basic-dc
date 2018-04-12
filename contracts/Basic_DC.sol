@@ -1,7 +1,7 @@
 pragma solidity ^0.4.21;
 
-import '../node_modules/zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol';
-import '../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol';
+import 'zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol';
+import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
 
 /**
   @title Basic_DC, a prototype
@@ -10,24 +10,25 @@ import '../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol';
   Uses OpenZeppelin ERC721Token
  */
 
-contract Basic_DC is ERC721Token, Ownable {
-  string public constant NAME = "GruvyLu";
-  string public constant SYMBOL = "GLU";
+contract Basic_DC is ERC721Token {
+  string public _name = "GruvyLu";
+  string public _symbol = "GLV";
 
   uint256 public constant PRICE = .001 ether;
 
   mapping(uint256 => uint256) tokenToPriceMap;
 
-  function Basic_DC() public {
-
+  function Basic_DC() ERC721Token(_name, _symbol) public {
+    name_ = _name;
+    symbol_ = _symbol;
   }
 
   function name() public view returns(string) {
-    return NAME;
+    return symbol_;
   }
 
   function symbol() public view returns(string) {
-    return SYMBOL;
+    return symbol_;
   }
 
   function mint(uint256 colorId) public payable {

@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "lint-sol": "solhint contracts/*.sol",
     "testrpc": "testrpc -a 15",
     "test": "truffle test"
   },
@@ -19,8 +20,15 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
     "ethereumjs-testrpc": "^6.0.3",
     "ganache-cli": "^6.1.0",
+    "solhint": "^1.1.10",
+    "solidity-coverage": "^0.4.15",
     "truffle": "^4.1.5"
   }
 }
